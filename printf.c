@@ -10,9 +10,10 @@ int _printf(const char *format, ...)
 	int count = 0, i;
 	va_list args;
 
-	p_f m[] = {
-		{'s', format_string}, {'c', format_char}, {'b', format_binary}, 
-		{'i', format_int}, {'d', format_int}, {'%', NULL}, {0, NULL}};
+	p_f m[] = {{'s', format_string}, {'c', format_char}, {'b', format_binary},
+		{'i', format_int}, {'d', format_int}, {'u', format_unsigned},
+		{'o', format_octal}, {'x', format_hexadecimal},
+		{'X', format_hexadecimal_upper}, {'%', NULL}, {0, NULL}};
 	va_start(args, format);
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
