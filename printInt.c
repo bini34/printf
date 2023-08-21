@@ -2,10 +2,11 @@
 /**
  * format_int - a function that print int
  * @args: integer argument
+ * @count: A pointer to the count of characters printed
  */
-void format_int(va_list args, int *count) 
+void format_int(va_list args, int *count)
 {
-	int num, reversed = 0, digit; 
+	int num, reversed = 0, digit;
 
 	num = va_arg(args, int);
 	if (num < 0)
