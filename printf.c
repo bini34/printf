@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 	va_list args;
 
 	p_f m[] = {
-		{'s', format_string}, {'c', format_char},
+		{'s', format_string}, {'c', format_char}, {'b', format_binary}, 
 		{'i', format_int}, {'d', format_int}, {'%', NULL}, {0, NULL}};
 	va_start(args, format);
 	if (!format || (format[0] == '%' && !format[1]))
