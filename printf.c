@@ -10,16 +10,14 @@ int _printf(const char *format, ...)
 	int count = 0, i;
 	va_list args;
 
-    p_f m[] = {
-        {'s', format_string},
-		{'c', format_char},
-        {'i', format_int},
+	p_f m[] = {
+		{'s', format_string}, {'c', format_char},
+		{'i', format_int},
+		{'d', format_int},
 		{'%', NULL},
 		{0, NULL}
 	};
-
-    va_start(args, format);
-
+	va_start(args, format);
 	while (*format)
 	{
 		if (*format == '%')
@@ -38,7 +36,7 @@ int _printf(const char *format, ...)
 					}
 					break;
 				}
-            }
+			}
 		}
 		else
 		{
@@ -46,8 +44,8 @@ int _printf(const char *format, ...)
 			count++;
 		}
 		format++;
-    }
-    va_end(args);
-    return count;
+	}
+	va_end(args);
+	return (count);
 }
 
