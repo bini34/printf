@@ -8,7 +8,7 @@
 void format_hexadecimal(va_list args, int *count)
 {
 	unsigned int num = va_arg(args, unsigned int);
-	int printed = 0, i, index = 0, digit;
+	int i, index = 0, digit;
 	char hex_digits[] = "0123456789abcdef", buffer[32];
 
 	if (num == 0)

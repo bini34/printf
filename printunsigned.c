@@ -7,7 +7,7 @@
 void format_unsigned(va_list args, int *count)
 {
 	unsigned int num = va_arg(args, unsigned int);
-	int printed = 0, digit;
+	int digit, i = 0, buffer[32];
 
 	if (num == 0)
 	{
@@ -19,9 +19,15 @@ void format_unsigned(va_list args, int *count)
 		while (num != 0)
 		{
 			digit = num % 10;
-			putchar('0' + digit);
-			(*count)++;
+			buffer[i] = '0' + digit;
+			i++;
 			num /= 10;
+		}
+		while (i > 0)
+		{
+			i--;
+			_putchar(buffer[i]);
+			(*count)++;
 		}
 	}
 }
