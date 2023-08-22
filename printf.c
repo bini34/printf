@@ -13,7 +13,8 @@ int _printf(const char *format, ...)
 	p_f m[] = {{'s', format_string}, {'c', format_char}, {'b', format_binary},
 		{'i', format_int}, {'d', format_int}, {'u', format_unsigned},
 		{'o', format_octal}, {'x', format_hexadecimal},
-		{'X', format_hexadecimal_upper}, {'%', NULL}, {0, NULL}};
+		{'X', format_hexadecimal_upper}, {'S', print_special_string},
+		{'%', NULL}, {0, NULL}};
 	va_start(args, format);
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
