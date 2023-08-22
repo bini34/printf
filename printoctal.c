@@ -7,7 +7,8 @@
 void format_octal(va_list args, int *count)
 {
 	unsigned int num = va_arg(args, unsigned int);
-	int printed = 0, digit;
+	int digit, i = 0;
+	char buffer[32];
 
 	if (num == 0)
 	{
@@ -19,9 +20,15 @@ void format_octal(va_list args, int *count)
 		while (num != 0)
 		{
 			digit = num % 8;
-			_putchar('0' + digit);
-			(*count)++;
+			buffer[i] = '0' + digit;
+			i++;
 			num /= 8;
+		}
+		while (i > 0)
+		{
+			i--;
+			_putchar(buffer[i]);
+			(*count)++;
 		}
 	}
 }

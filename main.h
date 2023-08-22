@@ -20,8 +20,9 @@ void format_char(va_list args, int *count);
 void format_string(va_list args, int *count);
 void format_int(va_list args, int *count);
 void format_binary(va_list args, int *count);
-void formathexadecimal(va_list args, int *count);
-void formatoctal(va_list args, int *count);
-void formatunsigned(va_list args, int *count);
+void format_hexadecimal(va_list args, int *count);
+void format_hexadecimal_upper(va_list args, int *count);
+void format_octal(va_list args, int *count);
+void format_unsigned(va_list args, int *count);
 
 #endif /* MAIN_H */
