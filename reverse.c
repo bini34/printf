@@ -6,5 +6,5 @@ void print_reversed_String(const char *strng)
 {
 int length = strlen(strng);
 for (int x = length - 1; x >= 0; x--)
-printf("%c", stiirng[x]);
+_printf("%c", stiirng[x]);
 }
