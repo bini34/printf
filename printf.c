@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 		{'i', format_int}, {'d', format_int}, {'u', format_unsigned},
 		{'o', format_octal}, {'x', format_hexadecimal},
 		{'X', format_hexadecimal_upper}, {'S', print_special_string},
-		{'p', print_pointer}, {'%', NULL}, {0, NULL}};
+		{'p', print_pointer}, {'r', format_reverse}, {'%', NULL}, {0, NULL}};
 	va_start(args, format);
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
@@ -32,19 +32,12 @@ int _printf(const char *format, ...)
 					else
 					{
 						_putchar('%');
-						count++;
-					}
-					break;
-				}
-			}
-		}
+						count++;	}
+					break;	}	}	}
 		else
 		{
 			_putchar(*format);
-			count++;
-		}
-		format++;
-	}
+			count++;	}
+		format++;	}
 	va_end(args);
-	return (count);
-}
+	return (count);	}

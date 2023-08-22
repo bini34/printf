@@ -28,5 +28,6 @@ void format_octal(va_list args, int *count);
 void format_unsigned(va_list args, int *count);
 void print_special_string(va_list args, int *count);
 void print_pointer(va_list args, int *count);
-
+void reverse_string(char *str);
+void format_reverse(va_list args, int *count);
 #endif /* MAIN_H */
