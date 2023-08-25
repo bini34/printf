@@ -12,27 +12,28 @@ void print_positive_int(int n, int *count)
 	_putchar('0' + n % 10);
 	(*count)++;
 }
+
 /**
- * format_int - a function that print int
- * @args: integer argument
+ * format_int - a function that handles %i and %d format specifiers
+ * @args: va_list containing the integer argument
  * @count: A pointer to the count of characters printed
  */
 void format_int(va_list args, int *count)
 {
-	int num;
+	int num = va_arg(args, int);
 
-	num = va_arg(args, int);
-	if (num < 0)
-	{
-		_putchar('-');
-		(*count)++;
-		num = -num;
-	}
 	if (num == 0)
 	{
 		_putchar('0');
 		(*count)++;
 		return;
+	}
+
+	if (num < 0)
+	{
+		_putchar('-');
+		(*count)++;
+		num = -num;
 	}
 	print_positive_int(num, count);
 }
