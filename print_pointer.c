@@ -7,22 +7,18 @@
 void print_pointer(va_list args, int *count)
 {
 	void *ptr = va_arg(args, void *);
-	char str[] = "(nil)";
-	int i = 0;
 
 	if (ptr == NULL)
 	{
-		while(str[i] != '\0')
-		{
-			_putchar(str[0]);
-			(*count) += 5;
-			i++;
-		}
-    }
+		_putchar('0');
+		_putchar('x');
+        _putchar('0');
+		(*count) += 3;
+	}
 	else
 	{
 		unsigned long int num = (unsigned long int)ptr;
-		int index, num_digits = sizeof(void *) * 2, leading_zeros = 1;
+		int index, i, num_digits = sizeof(void *) * 2, leading_zeros = 1;
 		char hex_digits[] = "0123456789abcdef";
 		_putchar('0');
 		_putchar('x');
